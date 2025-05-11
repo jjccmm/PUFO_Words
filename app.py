@@ -2,6 +2,7 @@ import pandas as pd
 import streamlit as st
 import plotly.graph_objs as go
 import json
+import psutil
 
 st.set_page_config(layout="wide")
 
@@ -26,15 +27,19 @@ def load_stats():
 
 df = load_data()
 # stats, episodes_stats_df = load_stats()
-
+mem = psutil.virtual_memory()
+st.write(f"RAM-Verbrauch nach Laden: {mem.used / 1024**2:.2f} MB")
 
 st.title("🎙️ Die Das-Podcast-Ufo Podcast-Wortanalyse")
 
 # 🎯 Wörter-Auswahl
 word_columns = df.columns.drop("Episode")
 selected_words = st.multiselect("🔍 Wähle Wörter", word_columns, default=[]) #'eimer', 'geld', 'münzen', 'cent'
-
+mem = psutil.virtual_memory()
+st.write(f"RAM-Verbrauch nach Select Field: {mem.used / 1024**2:.2f} MB")
 if selected_words:
+    mem = psutil.virtual_memory()
+    st.write(f"RAM-Verbrauch nach wort auswahl: {mem.used / 1024**2:.2f} MB")
     # 📈 Häufigkeit über Episoden (Stacked Line Plot)
     st.subheader("📊 Häufigkeit der gewählten Wörter über alle Episoden")
     fig_line = go.Figure()
