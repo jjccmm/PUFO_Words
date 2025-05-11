@@ -31,7 +31,7 @@ st.title("🎙️ Die Das-Podcast-Ufo Podcast-Wortanalyse")
 
 # 🎯 Wörter-Auswahl
 word_columns = df.columns.drop("Episode")
-selected_words = st.multiselect("🔍 Wähle Wörter", word_columns, default=['eimer', 'geld', 'münzen', 'cent'])
+selected_words = st.multiselect("🔍 Wähle Wörter", word_columns, default=[]) #'eimer', 'geld', 'münzen', 'cent'
 
 if selected_words:
     # 📈 Häufigkeit über Episoden (Stacked Line Plot)
