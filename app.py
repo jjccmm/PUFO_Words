@@ -19,12 +19,13 @@ def load_data():
 @st.cache_data
 def load_stats():
     with open("episode_stats.json", "r", encoding="utf-8") as f:
-        return json.load(f)
-
+        stats =  json.load(f)
+    episodes_stats_df = pd.DataFrame(stats["episodes"])
+    return stats, episodes_stats_df
+    
 
 df = load_data()
-stats = load_stats()
-episodes_stats_df = pd.DataFrame(stats["episodes"])
+# stats, episodes_stats_df = load_stats()
 
 
 st.title("🎙️ Die Das-Podcast-Ufo Podcast-Wortanalyse")
@@ -87,7 +88,7 @@ if selected_words:
 
 else:
     st.info("⬆ Bitte wähle oben ein oder mehrere Wörter.")
-
+"""
 # 📊 Allgemeine Statistik
 st.header("📋 Allgemeine Statistik")
 
@@ -152,3 +153,4 @@ fig_new.update_layout(
     height=300
 )
 st.plotly_chart(fig_new, use_container_width=False)
+"""
