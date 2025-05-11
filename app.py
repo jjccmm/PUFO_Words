@@ -9,11 +9,15 @@ st.set_page_config(layout="wide")
 # 📥 CSV laden und umstrukturieren
 @st.cache_data
 def load_data():
+    
     df = pd.read_csv("word_counts.csv", index_col=0)
+    df.fillna(0, inplace=True)  # NaN-Werte durch 0 ersetzen
+    df = df[df["is_stop"] == False]  # nur relevante Wörter
+    df = df.drop(columns=["is_stop"])
+    df = df.astype("uint8")
     df = df.T  # Episoden = Zeilen
     df.index.name = "Episode"
     df.reset_index(inplace=True)
-    #df["Episode"] = df["Episode"].astype(int)
     return df
 
 
