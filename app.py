@@ -2,14 +2,13 @@ import pandas as pd
 import streamlit as st
 import plotly.graph_objs as go
 import json
-import psutil
+
 
 st.set_page_config(layout="wide")
 
 # 📥 CSV laden und umstrukturieren
 @st.cache_data
 def load_data():
-    
     df = pd.read_csv("word_counts.csv", index_col=0)
     df.fillna(0, inplace=True)  # NaN-Werte durch 0 ersetzen
     df = df[df["is_stop"] == False]  # nur relevante Wörter
@@ -30,31 +29,27 @@ def load_stats():
     
 
 df = load_data()
-# stats, episodes_stats_df = load_stats()
-mem = psutil.virtual_memory()
-st.write(f"RAM-Verbrauch nach Laden: {mem.used / 1024**2:.2f} MB")
+stats, episodes_stats_df = load_stats()
 
 st.title("🎙️ Die Das-Podcast-Ufo Podcast-Wortanalyse")
 
 # 🎯 Wörter-Auswahl
 word_columns = df.columns.drop("Episode")
-selected_words = st.multiselect("🔍 Wähle Wörter", word_columns, default=[]) #'eimer', 'geld', 'münzen', 'cent'
-mem = psutil.virtual_memory()
-st.write(f"RAM-Verbrauch nach Select Field: {mem.used / 1024**2:.2f} MB")
+selected_words = st.multiselect("🔍 Wähle Wörter", word_columns, default=['eimer', 'münze', 'cent']) 
+
 if selected_words:
-    mem = psutil.virtual_memory()
-    st.write(f"RAM-Verbrauch nach wort auswahl: {mem.used / 1024**2:.2f} MB")
+    df_selected = df[["Episode"] + selected_words]
+    
     # 📈 Häufigkeit über Episoden (Stacked Line Plot)
     st.subheader("📊 Häufigkeit der gewählten Wörter über alle Episoden")
     fig_line = go.Figure()
     for word in selected_words:
         fig_line.add_trace(go.Scatter(
-            x=df["Episode"], y=df[word], mode="lines", stackgroup="one", name=word
+            x=df_selected["Episode"], y=df_selected[word], mode="lines", stackgroup="one", name=word
         ))
     fig_line.update_layout(
         xaxis_title="Episode",
         yaxis_title="Anzahl",
-        title="Stacked Line Plot",
         width=1000,
         height=400
     )
@@ -63,10 +58,10 @@ if selected_words:
     # 🏆 Top 10 Episoden mit höchster Wortanzahl
     st.subheader("🏅 Top 10 Episoden mit häufigster Verwendung ausgewählter Wörter")
 
-    df["total_selected"] = df[selected_words].sum(axis=1)
+    df_selected["total_selected"] = df_selected[selected_words].sum(axis=1)
 
     # Top 10 nach Häufigkeit
-    top10 = df.sort_values("total_selected", ascending=False).head(10)
+    top10 = df_selected.sort_values("total_selected", ascending=False).head(10)
 
     # Episoden als Strings für korrektes Y-Achsen-Labeling
     top10["Episode_str"] = "Episode " + top10["Episode"].astype(str)
@@ -87,7 +82,6 @@ if selected_words:
         barmode="stack",
         xaxis_title="Anzahl",
         yaxis_title="Episode (nur Top 10)",
-        title="Top 10 Episoden (Stacked Bar Chart)",
         width=1000,
         height=500,
         yaxis=dict(type="category")  # ⬅️ Y-Achse kategorisch
@@ -97,7 +91,7 @@ if selected_words:
 
 else:
     st.info("⬆ Bitte wähle oben ein oder mehrere Wörter.")
-"""
+
 # 📊 Allgemeine Statistik
 st.header("📋 Allgemeine Statistik")
 
@@ -162,4 +156,20 @@ fig_new.update_layout(
     height=300
 )
 st.plotly_chart(fig_new, use_container_width=False)
-"""
+
+
+with st.expander("🔧 So wurde die Analyse erstellt"):
+    st.markdown("""
+    Die Analyse der Podcast-Episoden erfolgte in mehreren Schritten:
+
+    1. 📡 **RSS-Feed auslesen** – um Links zu den MP3-Dateien der Episoden zu erhalten  
+    2. 💾 **MP3 herunterladen** – jede Episode wurde lokal gespeichert  
+    3. 🧠 **Spracherkennung mit Whisper** – die Audiodateien wurden mit dem Whisper-Modell in Text umgewandelt  
+    4. ✂️ **Tokenisierung mit spaCy** – der transkribierte Text wurde in Wörter (Lemmata) zerlegt  
+    5. 🚫 **Stoppwörter entfernen** – häufige Wörter wie „und“, „oder“, „das“ wurden ausgefiltert  
+
+    **⚠️ Herausforderungen:**
+
+    - 🔉 Fehler bei der automatischen Spracherkennung (z. B. schlechte Audioqualität, Dialekte)
+    - 🧾 Uneinheitliche oder falsche Lemmatisierung durch NLP-Tools
+    """)
