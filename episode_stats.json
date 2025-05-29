@@ -1,7 +1,7 @@
 {
-  "total_episodes": 397,
-  "total_words": 4713528,
-  "total_unique_words": 103540,
+  "total_episodes": 464,
+  "total_words": 5451734,
+  "total_unique_words": 115787,
   "episodes": [
     {
       "episode": 1,
@@ -2384,6 +2384,408 @@
       "total_words": 10972,
       "unique_words": 1737,
       "new_words": 181
+    },
+    {
+      "episode": 398,
+      "total_words": 11031,
+      "unique_words": 1787,
+      "new_words": 188
+    },
+    {
+      "episode": 399,
+      "total_words": 11022,
+      "unique_words": 1922,
+      "new_words": 217
+    },
+    {
+      "episode": 400,
+      "total_words": 11315,
+      "unique_words": 1826,
+      "new_words": 208
+    },
+    {
+      "episode": 401,
+      "total_words": 10559,
+      "unique_words": 1606,
+      "new_words": 146
+    },
+    {
+      "episode": 402,
+      "total_words": 10631,
+      "unique_words": 1578,
+      "new_words": 145
+    },
+    {
+      "episode": 403,
+      "total_words": 10531,
+      "unique_words": 1698,
+      "new_words": 189
+    },
+    {
+      "episode": 404,
+      "total_words": 10181,
+      "unique_words": 1641,
+      "new_words": 156
+    },
+    {
+      "episode": 405,
+      "total_words": 10348,
+      "unique_words": 1720,
+      "new_words": 197
+    },
+    {
+      "episode": 406,
+      "total_words": 10555,
+      "unique_words": 1754,
+      "new_words": 170
+    },
+    {
+      "episode": 407,
+      "total_words": 11415,
+      "unique_words": 1792,
+      "new_words": 191
+    },
+    {
+      "episode": 408,
+      "total_words": 10871,
+      "unique_words": 1764,
+      "new_words": 148
+    },
+    {
+      "episode": 409,
+      "total_words": 11294,
+      "unique_words": 1767,
+      "new_words": 163
+    },
+    {
+      "episode": 410,
+      "total_words": 10657,
+      "unique_words": 1776,
+      "new_words": 200
+    },
+    {
+      "episode": 411,
+      "total_words": 10233,
+      "unique_words": 1717,
+      "new_words": 186
+    },
+    {
+      "episode": 412,
+      "total_words": 10306,
+      "unique_words": 1783,
+      "new_words": 194
+    },
+    {
+      "episode": 413,
+      "total_words": 11033,
+      "unique_words": 1773,
+      "new_words": 158
+    },
+    {
+      "episode": 414,
+      "total_words": 11749,
+      "unique_words": 1831,
+      "new_words": 168
+    },
+    {
+      "episode": 415,
+      "total_words": 10207,
+      "unique_words": 1905,
+      "new_words": 234
+    },
+    {
+      "episode": 416,
+      "total_words": 11167,
+      "unique_words": 1722,
+      "new_words": 198
+    },
+    {
+      "episode": 417,
+      "total_words": 10976,
+      "unique_words": 1785,
+      "new_words": 172
+    },
+    {
+      "episode": 418,
+      "total_words": 10839,
+      "unique_words": 1866,
+      "new_words": 227
+    },
+    {
+      "episode": 419,
+      "total_words": 11142,
+      "unique_words": 1891,
+      "new_words": 213
+    },
+    {
+      "episode": 420,
+      "total_words": 10889,
+      "unique_words": 1807,
+      "new_words": 187
+    },
+    {
+      "episode": 421,
+      "total_words": 10867,
+      "unique_words": 1714,
+      "new_words": 168
+    },
+    {
+      "episode": 422,
+      "total_words": 11472,
+      "unique_words": 1832,
+      "new_words": 185
+    },
+    {
+      "episode": 423,
+      "total_words": 11286,
+      "unique_words": 1798,
+      "new_words": 186
+    },
+    {
+      "episode": 424,
+      "total_words": 11100,
+      "unique_words": 1628,
+      "new_words": 177
+    },
+    {
+      "episode": 425,
+      "total_words": 10772,
+      "unique_words": 1842,
+      "new_words": 195
+    },
+    {
+      "episode": 426,
+      "total_words": 11389,
+      "unique_words": 1849,
+      "new_words": 156
+    },
+    {
+      "episode": 427,
+      "total_words": 10855,
+      "unique_words": 1788,
+      "new_words": 182
+    },
+    {
+      "episode": 428,
+      "total_words": 11153,
+      "unique_words": 1743,
+      "new_words": 159
+    },
+    {
+      "episode": 429,
+      "total_words": 10828,
+      "unique_words": 1759,
+      "new_words": 174
+    },
+    {
+      "episode": 430,
+      "total_words": 10741,
+      "unique_words": 1704,
+      "new_words": 167
+    },
+    {
+      "episode": 431,
+      "total_words": 12023,
+      "unique_words": 1858,
+      "new_words": 200
+    },
+    {
+      "episode": 432,
+      "total_words": 11189,
+      "unique_words": 1914,
+      "new_words": 186
+    },
+    {
+      "episode": 433,
+      "total_words": 11409,
+      "unique_words": 1831,
+      "new_words": 173
+    },
+    {
+      "episode": 434,
+      "total_words": 11285,
+      "unique_words": 1713,
+      "new_words": 166
+    },
+    {
+      "episode": 435,
+      "total_words": 11191,
+      "unique_words": 1802,
+      "new_words": 173
+    },
+    {
+      "episode": 436,
+      "total_words": 10854,
+      "unique_words": 1713,
+      "new_words": 163
+    },
+    {
+      "episode": 437,
+      "total_words": 10876,
+      "unique_words": 1747,
+      "new_words": 179
+    },
+    {
+      "episode": 438,
+      "total_words": 11115,
+      "unique_words": 1829,
+      "new_words": 189
+    },
+    {
+      "episode": 439,
+      "total_words": 10510,
+      "unique_words": 1794,
+      "new_words": 183
+    },
+    {
+      "episode": 440,
+      "total_words": 10172,
+      "unique_words": 1681,
+      "new_words": 162
+    },
+    {
+      "episode": 441,
+      "total_words": 11780,
+      "unique_words": 1901,
+      "new_words": 201
+    },
+    {
+      "episode": 442,
+      "total_words": 12788,
+      "unique_words": 1797,
+      "new_words": 137
+    },
+    {
+      "episode": 443,
+      "total_words": 12206,
+      "unique_words": 1749,
+      "new_words": 202
+    },
+    {
+      "episode": 444,
+      "total_words": 11599,
+      "unique_words": 1831,
+      "new_words": 178
+    },
+    {
+      "episode": 445,
+      "total_words": 11311,
+      "unique_words": 1725,
+      "new_words": 155
+    },
+    {
+      "episode": 446,
+      "total_words": 10554,
+      "unique_words": 1765,
+      "new_words": 185
+    },
+    {
+      "episode": 447,
+      "total_words": 10706,
+      "unique_words": 1779,
+      "new_words": 187
+    },
+    {
+      "episode": 448,
+      "total_words": 10055,
+      "unique_words": 1706,
+      "new_words": 160
+    },
+    {
+      "episode": 449,
+      "total_words": 11749,
+      "unique_words": 1719,
+      "new_words": 140
+    },
+    {
+      "episode": 450,
+      "total_words": 10634,
+      "unique_words": 1686,
+      "new_words": 157
+    },
+    {
+      "episode": 451,
+      "total_words": 11158,
+      "unique_words": 1808,
+      "new_words": 170
+    },
+    {
+      "episode": 452,
+      "total_words": 11669,
+      "unique_words": 1946,
+      "new_words": 236
+    },
+    {
+      "episode": 453,
+      "total_words": 11823,
+      "unique_words": 1905,
+      "new_words": 173
+    },
+    {
+      "episode": 454,
+      "total_words": 11126,
+      "unique_words": 1846,
+      "new_words": 236
+    },
+    {
+      "episode": 455,
+      "total_words": 10495,
+      "unique_words": 1779,
+      "new_words": 191
+    },
+    {
+      "episode": 456,
+      "total_words": 10535,
+      "unique_words": 1837,
+      "new_words": 208
+    },
+    {
+      "episode": 457,
+      "total_words": 10920,
+      "unique_words": 1962,
+      "new_words": 223
+    },
+    {
+      "episode": 458,
+      "total_words": 11431,
+      "unique_words": 1708,
+      "new_words": 174
+    },
+    {
+      "episode": 459,
+      "total_words": 10379,
+      "unique_words": 1832,
+      "new_words": 218
+    },
+    {
+      "episode": 460,
+      "total_words": 11172,
+      "unique_words": 1729,
+      "new_words": 143
+    },
+    {
+      "episode": 461,
+      "total_words": 10976,
+      "unique_words": 1837,
+      "new_words": 210
+    },
+    {
+      "episode": 462,
+      "total_words": 11196,
+      "unique_words": 1667,
+      "new_words": 172
+    },
+    {
+      "episode": 463,
+      "total_words": 10421,
+      "unique_words": 1834,
+      "new_words": 217
+    },
+    {
+      "episode": 464,
+      "total_words": 11485,
+      "unique_words": 1723,
+      "new_words": 194
     }
   ]
 }
